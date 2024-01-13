@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Keyword Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        form,
+        #result {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 48%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            width: 48%;
+            padding: 20px; /* Increased padding for better alignment */
+            font-size: 18px;
+            color: #333;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+    <script>
+        function generateVariations() {
+            // ... (your existing JavaScript code)
+        // Get values from the form
+        var otel = document.getElementById('hotelName').value;
+            var sehir = document.getElementById('city').value;
+            var ilce = document.getElementById('district').value;
+            var mahalle = document.getElementById('neighborhood').value;
+
+            // Generate variations
+            var variations = [];
+
+            if (otel) {
+                variations.push(otel + " otel");
+                variations.push("otel " + otel);
+                variations.push(otel + " otel telefonu");
+                variations.push(otel + " otel iletişim");
+                variations.push("hotel " + otel);
+                variations.push(otel + " hotel");
+                variations.push(otel + " otel fiyat");
+                variations.push(otel + " otel tel");
+                variations.push(otel + " otel rezervasyon");
+                variations.push(otel + " otel iletişim");
+                variations.push("otel " + otel + " iletişim");
+                variations.push("hotel " + otel + " iletişim");
+                variations.push("otel " + otel + " numarası");
+                variations.push("otel " + otel + " tel");
+            }
+
+            if (sehir) {
+                variations.push(otel + " otel " + sehir);
+                variations.push(otel + " " + sehir);
+                variations.push(otel + " hotel " + sehir);
+                variations.push(sehir + " otel " + otel);
+                variations.push(sehir + " " + otel);
+            }
+
+            if (ilce) {
+                variations.push(otel + " hotel " + ilce);
+                variations.push(ilce + " " + otel + " hotel");
+                variations.push("otel " + otel + " " + ilce);
+                variations.push(ilce + " " + otel + " otel");
+                variations.push(otel + " otel " + ilce);
+                variations.push(otel + " " + ilce);
+                variations.push(ilce + " " + otel);
+            }
+
+            if (mahalle) {
+                variations.push(otel + " hotel " + mahalle);
+                variations.push(mahalle + " " + otel);
+                variations.push(otel + " hotel " + mahalle);
+                variations.push(mahalle + " " + otel + " hotel");
+            }
+
+            // Display variations in the result area
+            document.getElementById('result').innerHTML = variations.join('<br>');
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>Keyword Generator</h1>
+    </header>
+
+    <main>
+        <form>
+            <label for="hotelName">Hotel Name:</label>
+            <input type="text" id="hotelName" required>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" required>
+
+            <label for="district">District:</label>
+            <input type="text" id="district" required>
+
+            <label for="neighborhood">Neighborhood:</label>
+            <input type="text" id="neighborhood" required>
+
+            <button type="button" onclick="generateVariations()">Generate Variations</button>
+        </form>
+
+        <div id="result"></div>
+    </main>
+
+</body>
+</html>
