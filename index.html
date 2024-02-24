@@ -94,6 +94,7 @@
         var variations = [];
 
         if (otel) {
+            otel = otel.toLowerCase()
             variations.push('"'+otel + " otel"+'"');
             variations.push('"'+"otel " + otel+'"');
             variations.push('"'+otel + " otel telefonu"+'"');
@@ -111,6 +112,7 @@
         }
 
         if (sehir) {
+            sehir = sehir.toLowerCase()
             variations.push('"'+otel + " otel " + sehir+'"');
             variations.push('"'+otel + " " + sehir+'"');
             variations.push('"'+otel + " hotel " + sehir+'"');
@@ -119,6 +121,7 @@
         }
 
         if (ilce) {
+            ilce = ilce..toLowerCase()
             variations.push('"'+otel + " hotel " + ilce+'"');
             variations.push('"'+ilce + " " + otel + " hotel"+'"');
             variations.push('"'+"otel " + otel + " " + ilce+'"');
@@ -129,6 +132,7 @@
         }
 
         if (mahalle) {
+            mahalle = mahalle.toLowerCase()
             variations.push('"'+otel + " hotel " + mahalle+'"');
             variations.push('"'+mahalle + " " + otel+'"');
             variations.push('"'+otel + " hotel " + mahalle+'"');
